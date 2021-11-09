@@ -6,12 +6,5 @@ class EntradaTexto{
         System.out.println("Introduce tu nombre: ");
         nombre= System.console().readLine();
         System.out.println("Hola, " + nombre + " Vous êtes les bienvenus au programme");
-
-
-
-
-
     }
-
-
 }
