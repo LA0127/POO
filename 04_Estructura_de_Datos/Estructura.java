@@ -10,8 +10,9 @@ class Estructura{
         
         //Variables
         int edad, opcion, socio, numerobinario, figura, base, altura, perimetro;
-        int ladoizq, ladoder, radio, radiocubo, radiocuadrado, num1, num2;
-        double precio, bono, volumen, area, grados, resultado;
+        int ladoizq, ladoder, radio, radiocubo, radiocuadrado, num1, num2, total, numc4;
+        int numfact =0, positivos=0, negativos=0;
+        double precio, bono, volumen, area, grados, resultado, factorial=1;
         var pi = 3.14159265359;
         char letras;
         String binario="";
@@ -42,7 +43,7 @@ class Estructura{
 
             //Condicion switch para el menu
             opcion = entrada.nextInt();
-
+                //Primer switch para escoger programa a ejecutar
             switch(opcion){
                 case 1: //Bono y descuentos
                     System.out.println("Ingresa el Bono a cobrar. ");
@@ -75,9 +76,9 @@ class Estructura{
                                 System.out.println("Opcion no valida. ");
                         }//Cierre switch(socio) (interno al if)
                     }//Cierre if(edad<=21)
-                System.out.println("Tu edad es de: "+ edad);
-                System.out.println("El total a pagar es: " + bono);
-                break;
+                        System.out.println("Tu edad es de: "+ edad);
+                         System.out.println("El total a pagar es: " + bono);
+                            break;
 
                 case 2: //Decimal a binario
                     System.out.println("Conversion de decimal a binario");
@@ -92,11 +93,11 @@ class Estructura{
                         }
                         numerobinario=(int)numerobinario/2;
                     }
-            }else if(numerobinario==0){
-                binario="0";
-            }else{
-                binario= "no se pudo convertir el numero, solo positivos";
-            }
+                         }else if(numerobinario==0){
+                             binario="0";
+                         }else{
+                            binario= "no se pudo convertir el numero, solo positivos";
+                    }
                     System.out.println("El numero binario es: "+binario);
                     break;
                 case 3:  // Conversiones de temperatura
@@ -124,6 +125,25 @@ class Estructura{
                 
                 case 4:  // Contar numeros positivos y negativos
                     System.out.println("Contar numeros positivos y negativos");
+                    System.out.println("Cuantos numeros deseas ingresar? ");
+                    total =entrada.nextInt();
+                    do{
+                        System.out.print("Digite el numero: ");
+                        numc4 = entrada.nextInt();
+                        if (numc4 == 0){
+                          positivos = positivos + 0; //va a acumular los numeros positivos  
+                        }else{
+                            if(numc4 > 0){ //empieza a sumar los positivos
+                            positivos = positivos + 1;
+                            }else{
+                                negativos = negativos + 1;
+                            }
+                        }
+                        total = total - 1;
+                                        //Se deben inicializar las variables porque no puede tomar un valor, no se sabe que valor es.
+                    }while(total != 0);
+                        System.out.println("El total de positivos es: \n" + positivos);
+                        System.out.println("El total de negativos es: \n" + negativos);
                     break;
                 case 5:  //Tienda
                          /*ELABORA UN PROGRAMA QUE LEA CANTIDADES (PERMITIR AL USUARIO PREGUNTAR CUANTAS CANTIDADES 
@@ -191,8 +211,15 @@ class Estructura{
                     System.out.println("Tabla de valores de N");
 
                     break;
-                case 8:  //Factorial Tarea
+                case 8:  //Factorial
                     System.out.println("Calcular el factorial de N numero no negativo");
+                    System.out.println("Digite el numero al que desea hacer su factorial: ");
+                    numfact = entrada.nextInt();
+                    while(numfact != 0){ //Se declara diferente de cero para que no se multiplique por cero
+                        factorial *= numfact;
+                        numfact --; // Se decrementa porque va de adelante hacia atras
+                    }
+                    System.out.println("El factorial del numero dado es: " + factorial);
                     break;
                 case 9:  //Cuadro segun usuario
                     System.out.println("Imprimir un cuadrado segun el numero que ingrese el usuario. (1-20)");
