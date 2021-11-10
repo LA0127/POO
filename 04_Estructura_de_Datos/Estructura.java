@@ -13,6 +13,9 @@ class Estructura{
         int ladoizq, ladoder, radio, radiocubo, radiocuadrado, num1, num2, total, numc4;
         int numfact =0, positivos=0, negativos=0;
         double precio, bono, volumen, area, grados, resultado, factorial=1;
+        float precios = 0;
+        float resultado2=0;
+        int cantidad = 0;
         var pi = 3.14159265359;
         char letras;
         String binario="";
@@ -45,7 +48,7 @@ class Estructura{
             opcion = entrada.nextInt();
                 //Primer switch para escoger programa a ejecutar
             switch(opcion){
-                case 1: //Bono y descuentos
+                case 1:  //Bono y descuentos
                     System.out.println("Ingresa el Bono a cobrar. ");
                     bono = entrada.nextDouble();
                     System.out.println("Ingresa la edad. ");
@@ -80,7 +83,7 @@ class Estructura{
                          System.out.println("El total a pagar es: " + bono);
                             break;
 
-                case 2: //Decimal a binario
+                case 2:  //Decimal a binario
                     System.out.println("Conversion de decimal a binario");
                     System.out.println("Digite el numero que desea convertir a binario. (Solo numeros reales y enteros).");
                     numerobinario = entrada.nextInt();  //Positivo
@@ -146,11 +149,18 @@ class Estructura{
                         System.out.println("El total de negativos es: \n" + negativos);
                     break;
                 case 5:  //Tienda
-                         /*ELABORA UN PROGRAMA QUE LEA CANTIDADES (PERMITIR AL USUARIO PREGUNTAR CUANTAS CANTIDADES 
-                         DESEA INGRESAR) , LOS PRECIOS Y LOS PRODUCTOS YA ESTÁN DEFINIDOS Y AL FINAL QUE MUESTRE 
-                         EL TOTAL DE LOS PRODUCTOS COMPRADOS Y SU FACTURA TOTAL. 
-                         */
-                    System.out.println("Tienda");
+                    System.out.println("Cuantos elementos vas a ingresar. ");
+                    total = entrada.nextInt();
+                    for(int i = 1; i <= total; i ++){  //se necesita un for en vez de un do
+                        System.out.println("Ingresa el precio: ");
+                        precios = entrada.nextFloat();
+                        System.out.println("Ingresa la cantidad del producto: ");
+                        cantidad = entrada.nextInt();
+                         
+                        resultado2 = precios * cantidad; //resultado esta tomando una variable de tipo local
+                        
+                    }
+                        System.out.println("El resultado es: " + resultado2);
                     break;
                 case 6:  //Area y perietro y Volumen
                     System.out.println("Area y perimetro de un rectangulo y triangulo. Volumen de esfera y cilindro");
@@ -224,7 +234,7 @@ class Estructura{
                 case 9:  //Cuadro segun usuario
                     System.out.println("Imprimir un cuadrado segun el numero que ingrese el usuario. (1-20)");
                     break;
-                case 10:  //Cuadro hueco segun usuario
+                case 10: //Cuadro hueco segun usuario
                     System.out.println("Cuadrado hueco segun el numero que ingrese el usuario. (1-20)");
                     break;
                 case 11: //Patron asteriscos
