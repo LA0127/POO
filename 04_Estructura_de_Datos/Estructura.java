@@ -324,11 +324,12 @@ class Estructura{
                             break;
                         case '/':
                             System.out.print("Haz elegido division. ");
+                            if(num2 != 0){
                             resultado = num1 / num2;
                             System.out.println("El resultado de la division es de: " + resultado);
-                                if(resultado==0){
-                                    System.out.println("Es invalido");
-                                }
+                            }else{
+                                System.out.println("No es posible dividir entre cero.");
+                            }
                             break;
                         default:
                             System.out.println("\nOpcion no valida.");
