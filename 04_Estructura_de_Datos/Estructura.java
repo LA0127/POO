@@ -9,7 +9,7 @@ class Estructura{
         //Scanner letras = new Scanner(System.in);
         
         //Variables
-        int edad, opcion, socio, numerobinario, figura, base, altura, perimetro;
+        int edad, opcion, socio, numerobinario, figura, base, altura, perimetro, n;
         int ladoizq, ladoder, radio, radiocubo, radiocuadrado, num1, num2, total, numc4;
         int numfact =0, positivos=0, negativos=0;
         double precio, bono, volumen, area, grados, resultado, factorial=1;
@@ -17,7 +17,7 @@ class Estructura{
         float resultado2=0;
         int cantidad = 0;
         var pi = 3.14159265359;
-        char letras;
+        char letras, operacion;
         String binario="";
         
         //Cuerpo del programa
@@ -111,15 +111,16 @@ class Estructura{
                     switch(opcion){
                         case 1:
                             System.out.println("Haz elegido convertir C° a F°");//(grados*9/5)+32   (9/5=1.8)
+                            System.out.println("Digita los grados Celsius: ");
                             grados = entrada.nextDouble();
                             resultado = (grados*1.8)+32;
-                            System.out.println("Los grados en F°: " + resultado + "°F");
+                            System.out.println("Los grados en C°: "+ grados  + " Son: " + resultado + "°F");
                             break;
                         case 2:
                             System.out.println("Haz elegido convertir F° a C°");//(grados-32)*9/5   (5/9 = 0.555556)
                             grados = entrada.nextDouble();
                             resultado = (grados-32)*0.555556;
-                            System.out.println("Los grados en C°: " + resultado + "°C");
+                            System.out.println("Los grados en F°: " + grados + " Son: " + resultado + "°C");
                             break;
                         default:
                             System.out.println("Opcion no valida.");
@@ -219,7 +220,9 @@ class Estructura{
 
                 case 7:  //Tabla de valores de N
                     System.out.println("Tabla de valores de N");
-
+                    for(n = 1; n<=10;n++){
+                        System.out.println(n + " "+ (n*10) + " "+ (n*100)+ " "+(n*1000));
+                    }
                     break;
                 case 8:  //Factorial
                     System.out.println("Calcular el factorial de N numero no negativo");
@@ -233,9 +236,44 @@ class Estructura{
                     break;
                 case 9:  //Cuadro segun usuario
                     System.out.println("Imprimir un cuadrado segun el numero que ingrese el usuario. (1-20)");
+                    System.out.println("Digite el numero de lados");
+                    n = entrada.nextInt();
+                        if(n>=1 && n<=20){
+                            for(int i=1;i<=n;i++){
+                                for(int j=1;j<=n;j++){
+                                    System.out.print("* ");
+                                }//Cierre segundo for
+                                System.out.println(" ");
+                            }//Cierre primer for
+                        }else{
+                            System.out.println("El rango es entre 1 y 20, intente de nuevo.");
+                        }//Cierre else Cuadro
                     break;
                 case 10: //Cuadro hueco segun usuario
                     System.out.println("Cuadrado hueco segun el numero que ingrese el usuario. (1-20)");
+                    System.out.println("Digite el numero de lados");
+                    n = entrada.nextInt();
+                        if(n>=1 && n<=20){
+
+                            for(int i = 0; i < n; i++){
+                                System.out.print(" * ");
+                            }//Cierre primer for
+                            System.out.println();
+
+                            for(int i = 0; i < n-2; i++){
+                                System.out.print(" * "); //Columnas
+                                for(int j = 0; j < n-2; j++){
+                                    System.out.print("  ");
+                                }
+                                System.out.println("   * ");
+                            }
+                            for(int i = 0; i < n; i++){
+                              System.out.print(" * ");  
+                            }
+                            System.out.println();
+                        }else{
+                            System.out.println("El rango es entre 1 y 20, intente de nuevo.");
+                        }//Cierre else Cuadro 
                     break;
                 case 11: //Patron asteriscos
                     System.out.println("Ver patron de asteriscos");
@@ -263,44 +301,36 @@ class Estructura{
                     break;
                 case 13: //Calculadora
                     System.out.println("Calculadora a dos digitos");
-                    System.out.println("Selecciona una operaciòn que quieras realizar.\n1.-Suma\n2.-Resta\n3.-Multiplicacion\n4.-Division");
-                    opcion =entrada.nextInt();
-                    switch(opcion){
-                        case 1:
-                            System.out.print("Haz elegido suma de dos digitos. ");
-                            System.out.print("Digita el primer numero: ");
-                            num1 = entrada.nextInt();
-                            System.out.print("Digita el segundo numero: ");
-                            num2 = entrada.nextInt();
+                        System.out.print("Digita el primer numero: ");
+                        num1 = entrada.nextInt();
+                        System.out.print("Digita el segundo numero: ");
+                        num2 = entrada.nextInt();
+                        System.out.println("Que operacion deseas realizar: \n '+' Suma \n '-' Resta\n '*' Multiplicacion \n '/' Division ");
+                    operacion =entrada.next().charAt(0);
+                    switch(operacion){
+                        case '+':
+                            System.out.print("Haz elegido suma. ");
                             resultado = num1 + num2;
                             System.out.println("El resultado de la suma es de: " + resultado);
                             break;
-                        case 2:
-                            System.out.print("Haz elegido resta de dos digitos. ");
-                            System.out.print("Digita el primer numero: ");
-                            num1 = entrada.nextInt();
-                            System.out.print("Digita el segundo numero: ");
-                            num2 = entrada.nextInt();
+                        case '-':
+                            System.out.print("Haz elegido resta. ");
                             resultado = num1 - num2;
                             System.out.println("El resultado de la resta es de: " + resultado);
                             break;
-                        case 3:
-                            System.out.print("Haz elegido multiplicacion de dos digitos. ");
-                            System.out.print("Digita el primer numero: ");
-                            num1 = entrada.nextInt();
-                            System.out.print("Digita el segundo numero: ");
-                            num2 = entrada.nextInt();
+                        case '*':
+                            System.out.print("Haz elegido multiplicacion. ");
                             resultado = num1 * num2;
                             System.out.println("El resultado de la multiplicacion es de: " + resultado);
                             break;
-                        case 4:
-                            System.out.print("Haz elegido division de dos digitos. ");
-                            System.out.print("Digita el primer numero: ");
-                            num1 = entrada.nextInt();
-                            System.out.print("Digita el segundo numero: ");
-                            num2 = entrada.nextInt();
+                        case '/':
+                            System.out.print("Haz elegido division. ");
+                            if(num2 != 0){
                             resultado = num1 / num2;
                             System.out.println("El resultado de la division es de: " + resultado);
+                            }else{
+                                System.out.println("No es posible dividir entre cero.");
+                            }
                             break;
                         default:
                             System.out.println("\nOpcion no valida.");
