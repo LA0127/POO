@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; //lol
 class Suma2Numeros{
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);

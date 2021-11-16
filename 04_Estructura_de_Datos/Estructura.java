@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner;//xsde
 
 //import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar; De pronto aparecio esta linea de codigo
 class Estructura{

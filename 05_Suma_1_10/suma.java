@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class suma{
-    public static void main(String[] args){
+    public static void main(String[] args){//gg
         Scanner entrada = new Scanner(System.in);
         int n=0;
         System.out.println("Se hará una suma de los numeros del 1 al 10");

@@ -1,4 +1,4 @@
-//comentario
+//comentario jaja
 /*
 no afectan al codigo fuente
 */

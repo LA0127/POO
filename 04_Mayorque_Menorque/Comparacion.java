@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Comparacion{
+class Comparacion{//je
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
         int A, B, C;

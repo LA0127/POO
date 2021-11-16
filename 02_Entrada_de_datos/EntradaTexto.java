@@ -1,4 +1,4 @@
-class EntradaTexto{
+class EntradaTexto{ //
     public static void main(String[] args){
       //Tipo de dato, nombre de la variable
         String nombre;
