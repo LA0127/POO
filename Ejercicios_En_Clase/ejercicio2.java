@@ -1,10 +1,11 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class ejercicios{
-    Scanner entrada =new Scanner(System.in);
-    public void ejercicios1(){    
+public class ejercicio2{
+    public void ejercicios2(){
+        Scanner entrada =new Scanner(System.in);
         int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;
+        double promedio=0.0;
         System.out.println("Ingresa 10 numeros, pulsa enter para agregar cada numero");
         num1 = entrada.nextInt();
         num2 = entrada.nextInt();
@@ -30,18 +31,7 @@ public class ejercicios{
         int positivos=0;
         int negativos=0;
         int ceros=0;
-        for(int i =0;i<numeros.length;i++){
-            if(numeros[i]>0){
-                positivos++;
-            }else if(numeros[i]<0){
-                negativos++;
-            }else if(numeros[i]==0){
-                ceros++;
-            }
-
-        }
-        System.out.println("Positivos: " + positivos);
-        System.out.println("Negativos: " + negativos);
-        System.out.println("Ceros: " + ceros);
+        promedio = (num1+num3+num5+num7+num9)/5;
+        System.out.println("El promedio de los numeros pares es: " + promedio);
     }
 }
