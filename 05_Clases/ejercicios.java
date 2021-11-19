@@ -156,5 +156,32 @@ class ejercicios{
         }while(m!=0);
     }
     public void ejercicio4(){
+        System.out.print("Numero de lineas? ");
+        int n = entrada.nextInt();
+        for(int j=0;j<n;j++){
+                System.out.print(" *");
+            }
+            System.out.println("");
+            for(int i =0;i<n;i++){
+                for(int j=0;j<n;j++){
+                 System.out.print(" /");
+                }   
+                 System.out.println("");
+            for(int k =0;k<n;k++){
+                    for(int j=0;j<n;j++){
+                        System.out.print(" *");
+                    }
+                System.out.println("");
+        for(int l =0;l<n;l++){
+            for(int j=0;j<n;j++){
+               System.out.print(" /");
+            }
+            System.out.println("");
+        }
+            }
+            
+        }
+        
+
     }
 }
