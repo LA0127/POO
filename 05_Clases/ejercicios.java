@@ -116,9 +116,9 @@ class ejercicios{
                 break;
             case 'c':
                 System.out.println("Digite los m/s");
-                kilogramos = entrada.nextDouble();
+                ms = entrada.nextDouble();
                 a = ms*(3600*1000);
-                System.out.println("La conversion de m/s a km/h es: "+a);
+                System.out.println("La conversion de m/s a km/h es: " + a);
                 break;
             default:
                 System.out.println("Opcion no valida");
@@ -137,7 +137,7 @@ class ejercicios{
                 System.out.println("El cuadro no acepta ni negativos ni mayores a 1000");
             }else{
                 for(int i =1; i<=n; i++){
-                    System.out.print("*");
+                    System.out.print(" *");
                 }
                 System.out.println();
                 for(int i = 0; i<n-2; i++){
@@ -158,7 +158,44 @@ class ejercicios{
     public void ejercicio4(){
         System.out.print("Numero de lineas? ");
         int n = entrada.nextInt();
-        for(int j=0;j<n;j++){
+        int contador = 0;
+        
+        for(int i =1; i<=n; i++){
+                System.out.print(" *");
+                }
+                System.out.println();
+            for(int i = 1; i<=n; i++){
+                System.out.print(" /");
+                    for(int j = 1; j<n;j++){
+                        System.out.print(" /");
+                    }
+                    System.out.println();
+                }
+                System.out.println();
+                for(int i = 1; i<=n; i++){
+                    System.out.print(" *");
+                }
+                System.out.println();
+        
+        /*do{
+        for(int i = 1; i < n; i++){
+            System.out.print(" *");
+            for(int j = 1; j < n; j++){
+                System.out.print("");
+            }   
+        }
+        System.out.println("");
+        for(int j = 0; j < n; j++){
+            System.out.print(" /");
+            for(int k=0; k < n; k++){
+                System.out.print("");
+            }
+        }
+            System.out.println("");
+        contador++;
+        }while(contador==n);
+        
+        /*for(int j=0;j<n;j++){
                 System.out.print(" *");
             }
             System.out.println("");
@@ -167,12 +204,12 @@ class ejercicios{
                  System.out.print(" /");
                 }   
                  System.out.println("");
-            for(int k =0;k<n;k++){
+            for(int k =0;k<n-2;k++){
                     for(int j=0;j<n;j++){
                         System.out.print(" *");
                     }
                 System.out.println("");
-        for(int l =0;l<n;l++){
+        for(int l =0;l<n-2;l++){
             for(int j=0;j<n;j++){
                System.out.print(" /");
             }
@@ -180,7 +217,7 @@ class ejercicios{
         }
             }
             
-        }
+        }*/
         
 
     }

@@ -6,7 +6,7 @@ public class ejercicio2{
         Scanner entrada =new Scanner(System.in);
         int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;
         double promedio=0.0;
-        System.out.println("Ingresa 10 numeros, pulsa enter para agregar cada numero");
+        System.out.println("\n\nIngresa 10 numeros, pulsa enter para agregar cada numero");
         num1 = entrada.nextInt();
         num2 = entrada.nextInt();
         num3 = entrada.nextInt();
