@@ -1,6 +1,5 @@
 import java.util.Scanner;
-class ejercicios{
-//gg
+class ejercicios{//ggs
 
     Scanner entrada = new Scanner(System.in);
     char op;

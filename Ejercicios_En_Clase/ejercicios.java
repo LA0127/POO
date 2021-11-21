@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class ejercicios{
+public class ejercicios{//ejercicio uno, permite ingresar 10 numeros y leer los positivos, negativos y ceros
     Scanner entrada =new Scanner(System.in);
     public void ejercicios1(){    
         int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;

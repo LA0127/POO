@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class ejercicio2{
+public class ejercicio2{//Ejercicio dos, permite ingresar 10 numeros y sacar el promedio de los pares.
     public void ejercicios2(){
         Scanner entrada =new Scanner(System.in);
         int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10;
