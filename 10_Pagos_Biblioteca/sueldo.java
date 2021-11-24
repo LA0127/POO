@@ -1,0 +1,8 @@
+/*
+Obtener los pagos correspondientes de los trabajadores.
+
+ingresar el nombre del trabajador
+sueldo 
+tipo de trabajador
+
+*/
