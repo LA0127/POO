@@ -1,5 +1,5 @@
 public class animal{
-        //Encapsulamiento
+        //Encapsulamiento 
         //Agrupar para que no puedan ser modificados desde otro lugar
     private String nombre, raza, tipo_alimento;
     private int edad;
