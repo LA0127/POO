@@ -9,13 +9,13 @@ class MenuOpciones {
     Scanner entrada = new Scanner(System.in);
     char op;
     public void menu(){
-        char op;
+        int op;
         System.out.println("Libreria");
         System.out.println("1.- Libro");
         System.out.println("2.- Periodico");
         System.out.println("3.- Revista");
         System.out.println("Cualquier otra opcion sale del programa");
-        op = entrada.next().charAt(0);
+        op = entrada.nextInt();
         switch(op){
             case 1:
                     Libro();
@@ -80,11 +80,11 @@ class MenuOpciones {
             do{
                 System.out.println("Bienvenido a la biblioteca");
                 System.out.println("Ingrese la opcion deseada");
-                System.out.println("1.-Agregar nuevo libro");
-                System.out.println("2.-Consultar libro");
-                System.out.println("3.-Consultar todos los libros");
-                System.out.println("4.-Borrar un libro");
-                System.out.println("5.-Modificar los datos de un libro");
+                System.out.println("1.-Agregar nuevo periodico");
+                System.out.println("2.-Consultar periodico");
+                System.out.println("3.-Consultar todos los periodicos");
+                System.out.println("4.-Borrar un periodico");
+                System.out.println("5.-Modificar los datos de un periodico");
                 System.out.println("6.-Salir");
                 opcion = entrada.nextInt();
                 switch(opcion){
@@ -120,11 +120,11 @@ class MenuOpciones {
             do{
                 System.out.println("Bienvenido a la biblioteca");
                 System.out.println("Ingrese la opcion deseada");
-                System.out.println("1.-Agregar nuevo libro");
-                System.out.println("2.-Consultar libro");
-                System.out.println("3.-Consultar todos los libros");
-                System.out.println("4.-Borrar un libro");
-                System.out.println("5.-Modificar los datos de un libro");
+                System.out.println("1.-Agregar nueva revista");
+                System.out.println("2.-Consultar revista");
+                System.out.println("3.-Consultar todas las revistas");
+                System.out.println("4.-Borrar una revista");
+                System.out.println("5.-Modificar los datos de una revista");
                 System.out.println("6.-Salir");
                 opcion = entrada.nextInt();
                 switch(opcion){
