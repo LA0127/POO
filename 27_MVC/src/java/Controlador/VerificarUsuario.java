@@ -4,7 +4,7 @@
  */
 package Controlador;
 
-import BD.empleado;
+import BD.Empleado;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -49,16 +49,16 @@ public class VerificarUsuario extends HttpServlet {
         Si el usuario es 3 = encargado de bodega
         Si el usuario es 4 = vendedor
         */
-        empleado emp = new empleado();
+        Empleado emp = new Empleado();
         
         //mando a llamar al metodo de verif
-        emp = emp.VerificacionUsuario(usuario, password);
+        emp = emp.verificacionUsuario(usuario, password);
             if (emp != null) {
                 //creamos la sesion del usuario pq si existe
                 HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("emp", emp);
+                sesion.setAttribute("empleado", emp);
                 HttpSession sesionok = request.getSession();
-                sesionok.setAttribute("rol", usuario);
+                sesionok.setAttribute("name", usuario);
                 
                 
                 if (emp.getId_rol()==1) {

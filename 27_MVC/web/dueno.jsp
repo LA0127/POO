@@ -5,8 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import = "java.util.*;" %>
-<%@page import = "BD.*;" %>
+<%@page import = "java.util.*" %>
+<%@page import = "BD.*" %>
 
 <%@page session="true" %>
 
@@ -15,7 +15,7 @@
     String usuario = "";
     HttpSession sesionok = request.getSession();
     
-    if(sesionok.getAttribute("rol")==null){
+    if(sesionok.getAttribute("empleado")==null){
         %>
         <jsp:forward page="index.html">
             <jsp:param name="Error" value="Es obligatorio Autenticarse"/>
@@ -24,7 +24,7 @@
         
         <%
     }else{
-    usuario = (String)sesionok.getAttribute("rol");
+    usuario = (String)sesionok.getAttribute("name");
 }
 %>
 
@@ -37,7 +37,7 @@
     <body>
         <h1>Tabla de empleados de la tienda</h1>
         <br>
-        <% Vector<empleado> listarEmpleados = new empleado().listarEmpleados();%>
+        <% Vector<Empleado> listarEmpleados = new Empleado().listarEmpleados();%>
         <div class="table_usuarios">
             <table border="1" class="tabla_empleados">
                 <tr>
@@ -47,7 +47,7 @@
                     <th>Rol</th>
                 </tr>
                 <%
-                    for (empleado emp: listarEmpleados) {
+                    for (Empleado emp: listarEmpleados) {
                             
                         
                 %>

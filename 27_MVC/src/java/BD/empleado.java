@@ -4,7 +4,7 @@ import com.mysql.cj.xdevapi.PreparableStatement;
 import com.sun.org.apache.bcel.internal.generic.RETURN;
 import java.sql.*;
 import java.util.Vector;
-public class empleado {
+public class Empleado {
     private int num_empleado;
     private String nombre;
     private String user;
@@ -60,7 +60,7 @@ public class empleado {
         this.nombre_rol = nombre_rol;
     }
 
-    public empleado(){
+    public Empleado(){
     
     }
     //req funcionales son lo que hace el usuario con el sistema
@@ -77,9 +77,9 @@ public class empleado {
      /*Se diferencia de arraylist por la capacidad de datos
         que puede soportar, se queda con el tamaño definido y 
         arraylist puede agrandarse lo que se necesite*/
-    public Vector<empleado> listarEmpleados() throws SQLException, ClassNotFoundException{
+    public Vector<Empleado> listarEmpleados() throws SQLException, ClassNotFoundException{
         
-        Vector<empleado> listarEmpleados = new Vector<empleado>();
+        Vector<Empleado> listarEmpleados = new Vector<Empleado>();
         Connection con = null;
         PreparedStatement pre =null;
         ResultSet rs = null;
@@ -90,7 +90,7 @@ public class empleado {
             pre = con.prepareStatement(q);
             rs = pre.executeQuery();
             while (rs.next()){
-            empleado emp = new empleado();
+            Empleado emp = new Empleado();
             emp.setNum_empleado(rs.getInt("num_empleado"));
             emp.setNombre(rs.getString("nombre"));
             emp.setUser(rs.getString("user"));
@@ -124,8 +124,8 @@ public class empleado {
     
     
     //Verificar el tipo de usuario
-    public empleado VerificacionUsuario(String usuario, String password) throws ClassNotFoundException{
-        empleado emp = null;
+    public Empleado verificacionUsuario(String usuario, String password) throws ClassNotFoundException{
+        Empleado emp = null;
         Connection con = null;
         PreparedStatement pre = null;
         ResultSet rs = null;
@@ -148,7 +148,7 @@ public class empleado {
             rs = pre.executeQuery();
             
             while (rs.next()) {//se utilia while para que compare cada uno de los registros que hay
-                emp  = new empleado();
+                emp  = new Empleado();
                 emp.setNum_empleado(rs.getInt("num_empleado"));
                 emp.setNombre(rs.getString("nombre"));
                 emp.setUser(rs.getString("user"));
@@ -178,6 +178,8 @@ public class empleado {
         }
         return emp;
     }
+
+    
     
     
 
