@@ -59,28 +59,29 @@ public class VerificarUsuario extends HttpServlet {
                 sesion.setAttribute("empleado", emp);
                 HttpSession sesionok = request.getSession();
                 sesionok.setAttribute("name", usuario);
+                System.out.println(emp.getId_rol());
+                System.out.println(emp.getNombre());
+                System.out.println(emp.getUser());
                 
-                
-                if (emp.getId_rol()==1) {
-                //es el dueño
-                response.sendRedirect("dueno.jsp");
-                }
-                else if (emp.getId_rol()==2) {
-                //es el encargado de tienda
-                }
-                else if (emp.getId_rol()==3) {
-                //es el encargado de bodega
-                }
-                else if (emp.getId_rol()==4) {
-                //es el vendedor
-                }else{
-                    //Cliente
-                    response.sendRedirect("cliente.jsp");
+                switch(emp.getId_rol()){
+                    case 1:
+                        response.sendRedirect("dueno.jsp");
+                        break;
+                    case 2: 
+                        response.sendRedirect("edebode.jsp");
+                        break;
+                    case 3:
+                        response.sendRedirect("edetien.jsp");
+                        break;
                     
+                    case 4:
+                        response.sendRedirect("vendedor.jsp");
+                        break;
+                            
+                    default:
+                        response.sendRedirect("errores.jsp");
+                    break;
                 }
-            }else{
-                //El usuario no existe
-                response.sendRedirect("errores.jsp");
             }
                 
         }

@@ -1,7 +1,5 @@
 
 package BD;
-import com.mysql.cj.xdevapi.PreparableStatement;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import java.sql.*;
 import java.util.Vector;
 public class Empleado {
@@ -11,6 +9,10 @@ public class Empleado {
     private String pass;
     private int id_rol;
     private String nombre_rol;
+    
+    public Empleado(){
+    
+    }
     
     public int getNum_empleado() {
         return num_empleado;
@@ -60,9 +62,7 @@ public class Empleado {
         this.nombre_rol = nombre_rol;
     }
 
-    public Empleado(){
     
-    }
     //req funcionales son lo que hace el usuario con el sistema
 
     //cuales son las funciones del usuario:
@@ -76,12 +76,12 @@ public class Empleado {
     //Consulta todos los empleados
      /*Se diferencia de arraylist por la capacidad de datos
         que puede soportar, se queda con el tamaño definido y 
-        arraylist puede agrandarse lo que se necesite*/
-    public Vector<Empleado> listarEmpleados() throws SQLException, ClassNotFoundException{
-        
-        Vector<Empleado> listarEmpleados = new Vector<Empleado>();
+        arraylist puede agrandarse lo que se requiera*/
+    
+    public Vector<Empleado> listarEmpleados() throws ClassNotFoundException{
+         Vector<Empleado> listaempleados = new Vector<Empleado>();
         Connection con = null;
-        PreparedStatement pre =null;
+        PreparedStatement pre = null;
         ResultSet rs = null;
         
         try {
@@ -90,19 +90,19 @@ public class Empleado {
             pre = con.prepareStatement(q);
             rs = pre.executeQuery();
             while (rs.next()){
-            Empleado emp = new Empleado();
-            emp.setNum_empleado(rs.getInt("num_empleado"));
-            emp.setNombre(rs.getString("nombre"));
-            emp.setUser(rs.getString("user"));
-            emp.setPass(rs.getString("pass"));
-            emp.setId_rol(rs.getInt("id_rol"));
-            emp.setNombre_rol(rs.getString("nombre_rol"));
-            listarEmpleados.add(emp);
+                Empleado emp = new Empleado();
+                emp.setNum_empleado(rs.getInt("num_empleado"));
+                emp.setNombre(rs.getString("nombre"));
+                emp.setUser(rs.getString("user"));
+                emp.setPass(rs.getString("pass"));
+                emp.setId_rol(rs.getInt("id_rol"));
+                emp.setNombre_rol(rs.getString("nombre_rol"));
+                listaempleados.add(emp);
             }
         } catch (SQLException ed) {
             System.out.println("Error al conectar a la tabla consulta");
             System.out.println(ed.getMessage());
-            listarEmpleados = null; //para que no se quede con los datos y no queremos los datos
+            listaempleados = null; //para que no se quede con los datos y no queremos los datos
             
         }finally{
             try {
@@ -118,7 +118,7 @@ public class Empleado {
             }
             
         }
-        return listarEmpleados();
+        return listaempleados;
     }
     
     
@@ -138,16 +138,19 @@ public class Empleado {
             //Conectarme a la bd
             con = Conexion.getConexion();
             String q = "select * from empleado "
-                    + "where user = ?"
-                    + "and pass = ?";
+                    + "where user = ? and pass = ?";
             
             pre = con.prepareStatement(q);
-            pre.setString(1, usuario);//datos qure vamos a comparar 
+            pre.setString(1, usuario);
             pre.setString(2, password);
+            /*
+            pre = con.prepareStatement(q);
+            pre.setString(1, usuario);//datos qure vamos a comparar 
+            pre.setString(2, password);*/
             
             rs = pre.executeQuery();
             
-            while (rs.next()) {//se utilia while para que compare cada uno de los registros que hay
+            if(rs.next()){//se utilia while para que compare cada uno de los registros que hay
                 emp  = new Empleado();
                 emp.setNum_empleado(rs.getInt("num_empleado"));
                 emp.setNombre(rs.getString("nombre"));
@@ -155,7 +158,8 @@ public class Empleado {
                 emp.setPass(rs.getString("pass"));
                 emp.setId_rol(rs.getInt("id_rol"));
                 emp.setNombre_rol(rs.getString("nombre_rol"));
-                break;
+                //break;
+                
             }
             System.out.println("Usuario encontrado");
             

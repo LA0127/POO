@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dueño
-    Created on : 23 feb. 2022, 09:14:15
+    Document   : edetien
+    Created on : 3 mar. 2022, 00:16:51
     Author     : Alex
 --%>
 
@@ -33,7 +33,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menu dueño</title> 
+	<title>Bienvenido: <%=usuario%></title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
         <link rel="stylesheet" href=\all.css" >
 	<link rel="stylesheet" href="estilos.css">
@@ -46,7 +46,7 @@
     
     <div class="contenedor">
             
-        <h1>Dueño</h1>
+        <h1>Encargado de tienda</h1>
      
         <div align="center"><img src="lol.jpeg" width="160" class="imagen"></div>
      
